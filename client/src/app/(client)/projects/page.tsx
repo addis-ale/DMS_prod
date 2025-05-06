@@ -20,7 +20,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import ErrorState from "@/components/error-state";
 
 export default function ProjectsPage() {

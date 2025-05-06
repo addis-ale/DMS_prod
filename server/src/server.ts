@@ -15,7 +15,7 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 app.use(
   cors({
-    origin: "https://dms-prod-7z4r.vercel.app/", // Frontend URL
+    origin: "https://dms-prod-7z4r.vercel.app", // Frontend URL
     credentials: true, // Allow cookies to be sent
   })
 );

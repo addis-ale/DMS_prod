@@ -245,10 +245,6 @@ const SignUpForm = () => {
         </CardContent>
 
         <CardFooter className="flex flex-col space-y-3 border-t border-gray-200 p-4 pt-3">
-          <GoogleSignInButton className="w-full bg-white border border-gray-300 text-gray-800 hover:bg-gray-50">
-            Sign up with Google
-          </GoogleSignInButton>
-
           <div className="text-center text-sm text-gray-600">
             Already have an account?{" "}
             <Link

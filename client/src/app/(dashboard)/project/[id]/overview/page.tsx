@@ -36,7 +36,7 @@ export default function ProjectOverview() {
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "USD",
+      currency: "ETB",
       maximumFractionDigits: 0,
     }).format(amount);
   };
@@ -79,7 +79,7 @@ export default function ProjectOverview() {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Budget</CardTitle>
-              <DollarSign className="h-4 w-4 text-muted-foreground" />
+              <span>ETB</span>
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">
@@ -88,11 +88,11 @@ export default function ProjectOverview() {
               <p className="text-xs text-muted-foreground mt-1">
                 of {formatCurrency(projectData?.budget?.total || 0)} (
                 {Math.round(
-                  (projectData?.budget?.spent ||
-                    0 / projectData?.budget?.total ||
-                    0) * 100
+                  ((projectData?.budget?.spent || 0) /
+                    (projectData?.budget?.total || 1)) *
+                    100
                 )}
-                %)
+                % %)
               </p>
             </CardContent>
           </Card>

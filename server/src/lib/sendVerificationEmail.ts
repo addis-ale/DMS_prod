@@ -26,7 +26,7 @@ export const sendVerificationEmail = async (
   res: Response
 ) => {
   //url
-  const currentUrl = "http://localhost:8000/";
+  const currentUrl = "https://dms-prod-3w6u.onrender.com/";
   const uniqueString = uuidv4() + id;
   const verificationLink = `${currentUrl}api/verify/${id}/${uniqueString}`;
   const mailOptions = {

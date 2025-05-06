@@ -10,7 +10,7 @@ export default function ErrorState() {
 
   const handleRefresh = () => {
     setIsRotating(true);
-    setTimeout(() => router?.reload(), 500);
+    setTimeout(() => router.refresh(), 500);
   };
 
   return (

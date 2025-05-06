@@ -50,7 +50,7 @@ function ForgotPassword() {
           },
           body: JSON.stringify({
             email: data.email,
-            redirectUrl: "http://localhost:3000/reset-password/",
+            redirectUrl: "https://dms-prod-7z4r.vercel.app/reset-password/",
           }),
           credentials: "include",
         }
