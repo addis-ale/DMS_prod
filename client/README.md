@@ -12,7 +12,7 @@ yarn dev
 pnpm dev
 ```
 
-Open [https://dms-prod-7z4r.vercel.app](https://dms-prod-7z4r.vercel.app) with your browser to see the result.
+Open [https://dms-prod-e3ds.vercel.app](https://dms-prod-e3ds.vercel.app) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
