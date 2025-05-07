@@ -276,6 +276,18 @@ export default function SiteImages({
     return category.charAt(0).toUpperCase() + category.slice(1);
   };
 
+  // Clean up object URLs when component unmounts
+  useEffect(() => {
+    return () => {
+      // Clean up any object URLs to prevent memory leaks
+      newImages.forEach((img) => {
+        img.files.forEach((file) => {
+          URL.revokeObjectURL(URL.createObjectURL(file));
+        });
+      });
+    };
+  }, [newImages]);
+
   return (
     <div className="space-y-6">
       <div>
@@ -309,7 +321,7 @@ export default function SiteImages({
               >
                 <div className="relative aspect-video w-full">
                   <Image
-                    src={"/placeholder.svg"}
+                    src={image.imageUrl || "/placeholder.svg"}
                     alt={image.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
@@ -485,7 +497,7 @@ export default function SiteImages({
                 {img.files.map((file, i) => (
                   <div key={i} className="relative w-full h-32">
                     <Image
-                      src={"/placeholder.svg"}
+                      src={URL.createObjectURL(file) || "/placeholder.svg"}
                       alt={`Preview ${i}`}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
