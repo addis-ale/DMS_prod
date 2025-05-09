@@ -320,13 +320,6 @@ export default function SiteImages({
                 }`}
               >
                 <div className="relative aspect-video w-full">
-                  <Image
-                    src={image.imageUrl || "/placeholder.svg"}
-                    alt={image.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                    className="object-cover"
-                  />
                   <div className="absolute top-2 right-2 flex gap-1">
                     <Button
                       variant="outline"
